@@ -5,77 +5,22 @@
 #include <fstream>
 #include <ctime>
 #include <cstdlib>
-#include "nao_acertou.cpp"
-#include "letra_existe.cpp"
+#include "letra_existe.hpp"
+#include "imprime_cabecalho.hpp"
+#include "le_arquivo.hpp"
+#include "sorteia_palavra.hpp"
+#include "nao_enforcou.hpp"
+#include "imprime_erros.hpp"
+#include "imprime_palavra.hpp"
+#include "chuta.hpp"
+#include "adiciona_palavra.hpp"
+#include "nao_acertou.hpp"
 
 using namespace std;
 
 string palavra_secreta; 
 map<char, bool> chutou;
 vector<char> chutes_errados;
-
-vector<string> le_arquivo(){
-    ifstream arquivo;
-    arquivo.open("palavras.txt");
-
-    if(arquivo.is_open()){
-        int quantidade_palavras;
-        arquivo >> quantidade_palavras;
-
-
-        vector<string> palavras_do_arquivo;
-
-        for(int i=0;i<quantidade_palavras;i++){
-            string palavra_lida;
-            arquivo >> palavra_lida;
-            palavras_do_arquivo.push_back(palavra_lida);
-        }
-
-        arquivo.close();
-        return palavras_do_arquivo;
-    }
-    else{
-        cout << "Não foi possível acessar o banco de palavras." << endl;
-        exit(0);
-    }
-}
-
-void sorteia_palavra(){
-    vector<string> palavras = le_arquivo();
-
-    srand(time(NULL));
-    int indice_sorteado = rand() % palavras.size();
-
-    palavra_secreta = palavras[indice_sorteado];
-}
-
-void salva_arquivo(vector<string> nova_lista){
-    ofstream arquivo;
-    arquivo.open("palavras.txt");
-    if(arquivo.is_open()){
-        arquivo << nova_lista.size() << endl;
-
-        for(string palavra : nova_lista){
-            arquivo << palavra << endl;
-        }
-        arquivo.close();
-    }
-    else{
-        cout << "Não foi possível acessar o banco de palavras." << endl;
-        exit(0);
-    }
-}
-
-void adiciona_palavra(){
-    cout << "Digite a nova palavra, usando letras maiúsculas." << endl;
-    string nova_palavra;
-    cin >> nova_palavra;
-
-    vector<string> lista_palavras = le_arquivo();
-    lista_palavras.push_back(nova_palavra);
-
-    salva_arquivo(lista_palavras);
-}
 
 int main () {
     imprime_cabecalho();
