@@ -60,8 +60,8 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=../build-$(ConfigurationName)/Forca/sorteia_palavra.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/salva_arquivo.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/nao_enforcou.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/nao_acertou.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/letra_existe.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/adiciona_palavra.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/chuta.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/imprime_palavra.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/forca.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/imprime_erros.cpp$(ObjectSuffix) \
-	../build-$(ConfigurationName)/Forca/le_arquivo.cpp$(ObjectSuffix) 
+Objects0=../build-$(ConfigurationName)/Forca/sorteia_palavra.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/salva_arquivo.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/nao_acertou.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/letra_existe.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/adiciona_palavra.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/chuta.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/imprime_palavra.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/forca.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/imprime_erros.cpp$(ObjectSuffix) ../build-$(ConfigurationName)/Forca/le_arquivo.cpp$(ObjectSuffix) \
+	
 
 
 
@@ -107,14 +107,6 @@ PreBuild:
 
 ../build-$(ConfigurationName)/Forca/salva_arquivo.cpp$(PreprocessSuffix): salva_arquivo.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/Forca/salva_arquivo.cpp$(PreprocessSuffix) salva_arquivo.cpp
-
-../build-$(ConfigurationName)/Forca/nao_enforcou.cpp$(ObjectSuffix): nao_enforcou.cpp ../build-$(ConfigurationName)/Forca/nao_enforcou.cpp$(DependSuffix)
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/Dados/Documentos/code/cursos/2002-c++/Forca/Forca/nao_enforcou.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/nao_enforcou.cpp$(ObjectSuffix) $(IncludePath)
-../build-$(ConfigurationName)/Forca/nao_enforcou.cpp$(DependSuffix): nao_enforcou.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT../build-$(ConfigurationName)/Forca/nao_enforcou.cpp$(ObjectSuffix) -MF../build-$(ConfigurationName)/Forca/nao_enforcou.cpp$(DependSuffix) -MM nao_enforcou.cpp
-
-../build-$(ConfigurationName)/Forca/nao_enforcou.cpp$(PreprocessSuffix): nao_enforcou.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) ../build-$(ConfigurationName)/Forca/nao_enforcou.cpp$(PreprocessSuffix) nao_enforcou.cpp
 
 ../build-$(ConfigurationName)/Forca/nao_acertou.cpp$(ObjectSuffix): nao_acertou.cpp ../build-$(ConfigurationName)/Forca/nao_acertou.cpp$(DependSuffix)
 	$(CXX) $(IncludePCH) $(SourceSwitch) "/mnt/Dados/Documentos/code/cursos/2002-c++/Forca/Forca/nao_acertou.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/nao_acertou.cpp$(ObjectSuffix) $(IncludePath)
