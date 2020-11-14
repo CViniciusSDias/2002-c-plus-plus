@@ -14,54 +14,6 @@ string palavra_secreta;
 map<char, bool> chutou;
 vector<char> chutes_errados;
 
-bool nao_enforcou(){
-    return chutes_errados.size() < 5;
-}
-
-void imprime_cabecalho(){
-    cout << "*********************" << endl;
-    cout << "*** Jogo da Forca ***" << endl;
-    cout << "*********************" << endl;
-    cout << endl;
-}
-
-void imprime_erros(){
-    cout << "Chutes errados: ";
-    for(char letra: chutes_errados){
-        cout << letra << " ";
-    }
-    cout << endl;
-}
-
-void imprime_palavra(){
-    for(char letra : palavra_secreta){
-        if(chutou[letra]){
-            cout << letra << " ";
-        }
-        else{
-            cout << "_ ";
-        }
-    }
-    cout << endl;
-}
-
-void chuta(){
-    cout << "Seu chute: ";
-    char chute;
-    cin >> chute;
-
-    chutou[chute] = true;
-
-    if(letra_existe(chute)){
-        cout << "Você acertou! Seu chute está na palavra." << endl;
-    }
-    else{
-        cout << "Você errou! Seu chute não está na palavra." << endl;
-        chutes_errados.push_back(chute);
-    }
-    cout << endl;
-}
-
 vector<string> le_arquivo(){
     ifstream arquivo;
     arquivo.open("palavras.txt");
