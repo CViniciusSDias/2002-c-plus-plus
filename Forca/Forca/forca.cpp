@@ -14,9 +14,9 @@
 
 using namespace std;
 
-string palavra_secreta;
-map<char, bool> chutou;
-vector<char> chutes_errados;
+static string palavra_secreta;
+static map<char, bool> chutou;
+static vector<char> chutes_errados;
 
 int main()
 {
