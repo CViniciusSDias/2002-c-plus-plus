@@ -20,7 +20,6 @@
     <File Name="imprime_erros.hpp"/>
     <File Name="imprime_erros.cpp"/>
     <File Name="imprime_cabecalho.hpp"/>
-    <File Name="imprime_cabecalho.cpp"/>
     <File Name="forca.cpp"/>
     <File Name="chuta.hpp"/>
     <File Name="chuta.cpp"/>

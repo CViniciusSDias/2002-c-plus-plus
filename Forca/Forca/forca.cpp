@@ -1,10 +1,7 @@
-    #include <iostream>
+#include <iostream>
 #include <string>
 #include <map>
 #include <vector>
-#include <fstream>
-#include <ctime>
-#include <cstdlib>
 #include "letra_existe.hpp"
 #include "imprime_cabecalho.hpp"
 #include "le_arquivo.hpp"
